@@ -1,0 +1,24 @@
+<h1>Editing video_post</h1>
+
+<% form_for(@video_post) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :file_field %><br />
+    <%= f.file_field :uploaded_data %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @video_post %> |
+<%= link_to 'Back', video_posts_path %>

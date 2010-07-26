@@ -1,0 +1,24 @@
+<h1>Listing video_posts</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>File field</th>
+  </tr>
+
+<% @video_posts.each do |video_post| %>
+  <tr>
+    <td><%=h video_post.title %></td>
+    <td><%=h video_post.description %></td>
+    <td><%= link_to image_tag(video_post.public_filename(:thumb)), video_post.public_filename %></td>
+    <td><%= link_to 'Show', video_post %></td>
+    <td><%= link_to 'Edit', edit_video_post_path(video_post) %></td>
+    <td><%= link_to 'Destroy', video_post, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New video_post', new_video_post_path %>

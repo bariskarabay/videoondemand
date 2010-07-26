@@ -1,0 +1,1263 @@
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2010-07-26 15:21:48) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Completed in 39ms (View: 2, DB: 1) | 200 OK [http://127.0.0.1/rails/info/properties]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#index (for 127.0.0.1 at 2010-07-26 15:21:56) [GET]
+  [4;36;1mVideoPost Load (0.0ms)[0m   [0;1mMysql::Error: Table 'VideoOnDemand_development.video_posts' doesn't exist: SELECT * FROM `video_posts` [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'VideoOnDemand_development.video_posts' doesn't exist: SELECT * FROM `video_posts` ):
+  app/controllers/video_posts_controller.rb:5:in `index'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (26.1ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (79.6ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (177.8ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVideoPosts (20100726132022)
+  [4;36;1mSQL (73.3ms)[0m   [0;1mCREATE TABLE `video_posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (41.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100726132022')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `video_posts`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `video_posts`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#index (for 127.0.0.1 at 2010-07-26 15:22:50) [GET]
+  [4;35;1mVideoPost Load (0.2ms)[0m   [0mSELECT * FROM `video_posts` [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/index
+Completed in 13ms (View: 10, DB: 0) | 200 OK [http://127.0.0.1/video_posts/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#new (for 127.0.0.1 at 2010-07-26 15:22:54) [GET]
+  [4;36;1mVideoPost Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `video_posts`[0m
+Rendering template within layouts/video_posts
+Rendering video_posts/new
+
+ActionView::TemplateError (undefined method `file_field' for #<VideoPost:0xb6e42148>) on line #16 of app/views/video_posts/new.html.erb:
+13:   </p>
+14:   <p>
+15:     <%= f.label :file_field %><br />
+16:     <%= f.text_field :file_field %>
+17:   </p>
+18:   <p>
+19:     <%= f.submit 'Create' %>
+
+    app/views/video_posts/new.html.erb:16
+    app/views/video_posts/new.html.erb:3
+    app/controllers/video_posts_controller.rb:29:in `new'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (71.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#new (for 127.0.0.1 at 2010-07-26 15:23:40) [GET]
+  [4;35;1mVideoPost Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+Rendering template within layouts/video_posts
+Rendering video_posts/new
+Completed in 11ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/video_posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#new (for 127.0.0.1 at 2010-07-26 15:29:31) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mVideoPost Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mVideoPost Columns (0.3ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+
+NameError (undefined local variable or method `validate_as_attachment' for #<Class:0xb6e13f64>):
+  app/models/video_post.rb:10
+  app/controllers/video_posts_controller.rb:27:in `new'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (24.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#new (for 127.0.0.1 at 2010-07-26 15:30:51) [GET]
+  [4;36;1mVideoPost Columns (0.4ms)[0m   [0;1mSHOW FIELDS FROM `video_posts`[0m
+Rendering template within layouts/video_posts
+Rendering video_posts/new
+Completed in 67ms (View: 63, DB: 1) | 200 OK [http://127.0.0.1/video_posts/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#new (for 127.0.0.1 at 2010-07-26 15:39:25) [GET]
+
+SyntaxError (/home/christoph/NetBeansProjects/VideoOnDemand/app/models/video_post.rb:9: syntax error, unexpected tASSOC, expecting kEND
+                 :thumbnails => { :thumb => '100x100' }
+                               ^):
+  app/controllers/video_posts_controller.rb:27:in `new'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (23.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#new (for 127.0.0.1 at 2010-07-26 15:39:34) [GET]
+  [4;35;1mVideoPost Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+Rendering template within layouts/video_posts
+Rendering video_posts/new
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://127.0.0.1/video_posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVideoPosts (20100726132022)
+Migrating to CreateThumbs (20100726133713)
+  [4;36;1mSQL (79.3ms)[0m   [0;1mCREATE TABLE `thumbs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `parent_id` int(11), `content_type` varchar(255), `filename` varchar(255), `thumbnail` varchar(255), `size` int(11), `width` int(11), `height` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (33.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100726133713')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `thumbs`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `thumbs`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `thumbs`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW FIELDS FROM `video_posts`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `video_posts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `video_posts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVideoPosts (20100726132022)
+Migrating to CreateThumbnails (20100726133713)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `thumbs`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `thumbs`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `thumbs`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW FIELDS FROM `video_posts`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `video_posts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `video_posts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (83.2ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (160.1ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVideoPosts (20100726132022)
+  [4;36;1mSQL (89.5ms)[0m   [0;1mCREATE TABLE `video_posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `parent_id` int(11), `content_type` varchar(255), `filename` varchar(255), `thumbnail` varchar(255), `size` int(11), `width` int(11), `height` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (41.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100726132022')[0m
+Migrating to CreateThumbnails (20100726133713)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVideoPosts (20100726132022)
+Migrating to CreateThumbnails (20100726133713)
+  [4;36;1mSQL (139.3ms)[0m   [0;1mCREATE TABLE `thumbnails` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `parent_id` int(11), `content_type` varchar(255), `filename` varchar(255), `thumbnail` varchar(255), `size` int(11), `width` int(11), `height` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (41.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100726133713')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `thumbnails`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mdescribe `thumbnails`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `thumbnails`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW FIELDS FROM `video_posts`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `video_posts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `video_posts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#new (for 127.0.0.1 at 2010-07-26 16:04:10) [GET]
+  [4;36;1mVideoPost Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `video_posts`[0m
+Rendering template within layouts/video_posts
+Rendering video_posts/new
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://127.0.0.1/video_posts/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#index (for 127.0.0.1 at 2010-07-26 16:04:12) [GET]
+  [4;35;1mVideoPost Load (0.2ms)[0m   [0mSELECT * FROM `video_posts` [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://127.0.0.1/video_posts/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#new (for 127.0.0.1 at 2010-07-26 16:04:14) [GET]
+  [4;36;1mVideoPost Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `video_posts`[0m
+Rendering template within layouts/video_posts
+Rendering video_posts/new
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://127.0.0.1/video_posts/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#create (for 127.0.0.1 at 2010-07-26 16:04:31) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"mkeChLMY4cjogoKjpygXcQlDvoS2iF5ukwZfRYtdVok=", "video_post"=>{"uploaded_data"=>"463523405_033dc99232_o-652146.jpeg", "title"=>"", "description"=>""}}
+  [4;35;1mVideoPost Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+  [4;36;1mSQL (7.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/video_posts
+Rendering video_posts/new
+Completed in 27ms (View: 8, DB: 8) | 200 OK [http://127.0.0.1/video_posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#create (for 127.0.0.1 at 2010-07-26 16:04:42) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"mkeChLMY4cjogoKjpygXcQlDvoS2iF5ukwZfRYtdVok=", "video_post"=>{"uploaded_data"=>"apple_wallpaper_2_green_by_kageyoshi07.jpg", "title"=>"asdf", "description"=>"asdf"}}
+  [4;36;1mVideoPost Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `video_posts`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/video_posts
+Rendering video_posts/new
+Completed in 14ms (View: 6, DB: 1) | 200 OK [http://127.0.0.1/video_posts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#create (for 127.0.0.1 at 2010-07-26 16:05:25) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"mkeChLMY4cjogoKjpygXcQlDvoS2iF5ukwZfRYtdVok=", "video_post"=>{"uploaded_data"=>"apple_wallpaper_2_green_by_kageyoshi07.jpg", "title"=>"asdf", "description"=>"asdf"}}
+  [4;35;1mVideoPost Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/video_posts
+Rendering video_posts/new
+ERROR: compiling _run_erb_app47views47video_posts47new46html46erb RAISED compile error
+/home/christoph/NetBeansProjects/VideoOnDemand/app/views/video_posts/new.html.erb:21: syntax error, unexpected kEND, expecting ')'
+;  end ; @output_buffer.concat "\n\n"
+      ^
+/home/christoph/NetBeansProjects/VideoOnDemand/app/views/video_posts/new.html.erb:24: syntax error, unexpected kENSURE, expecting ')'
+/home/christoph/NetBeansProjects/VideoOnDemand/app/views/video_posts/new.html.erb:26: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47video_posts47new46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>New video_post</h1>\n\n"
+
+;  form_for(@video_post) do |f| ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( #f.error_messages ).to_s); @output_buffer.concat "\n\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :title ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.text_field :title ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :description ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.text_area :description ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :file_field ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.file_field :uploaded_data ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.submit 'Create' ).to_s); @output_buffer.concat "\n  </p>\n"
+
+;  end ; @output_buffer.concat "\n\n"
+
+; @output_buffer.concat(( link_to 'Back', video_posts_path ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/christoph/NetBeansProjects/VideoOnDemand/app/views/video_posts/new.html.erb:26:in `compile!'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:61:in `compile'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:28:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/template.rb:205:in `render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:265:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:348:in `_render_with_layout'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:262:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:942:in `render_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/home/christoph/NetBeansProjects/VideoOnDemand/app/controllers/video_posts_controller.rb:50:in `create'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135:in `custom'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `respond'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `respond'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/christoph/NetBeansProjects/VideoOnDemand/app/controllers/video_posts_controller.rb:45:in `create'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:391:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:386:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/routing/route_set.rb:438:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:14:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.8/lib/commands/server.rb:111
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/christoph/NetBeansProjects/VideoOnDemand/app/views/video_posts/new.html.erb:21: syntax error, unexpected kEND, expecting ')'
+;  end ; @output_buffer.concat "\n\n"
+      ^
+/home/christoph/NetBeansProjects/VideoOnDemand/app/views/video_posts/new.html.erb:24: syntax error, unexpected kENSURE, expecting ')'
+/home/christoph/NetBeansProjects/VideoOnDemand/app/views/video_posts/new.html.erb:26: syntax error, unexpected kEND, expecting ')') on line #21 of app/views/video_posts/new.html.erb:
+18:   <p>
+19:     <%= f.submit 'Create' %>
+20:   </p>
+21: <% end %>
+22: 
+23: <%= link_to 'Back', video_posts_path %>
+
+    app/views/video_posts/new.html.erb:26:in `compile!'
+    app/controllers/video_posts_controller.rb:50:in `create'
+    app/controllers/video_posts_controller.rb:45:in `create'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (27.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#index (for 127.0.0.1 at 2010-07-26 16:05:28) [GET]
+  [4;36;1mVideoPost Load (0.1ms)[0m   [0;1mSELECT * FROM `video_posts` [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://127.0.0.1/video_posts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#new (for 127.0.0.1 at 2010-07-26 16:05:29) [GET]
+  [4;35;1mVideoPost Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+Rendering template within layouts/video_posts
+Rendering video_posts/new
+ERROR: compiling _run_erb_app47views47video_posts47new46html46erb RAISED compile error
+/home/christoph/NetBeansProjects/VideoOnDemand/app/views/video_posts/new.html.erb:21: syntax error, unexpected kEND, expecting ')'
+;  end ; @output_buffer.concat "\n\n"
+      ^
+/home/christoph/NetBeansProjects/VideoOnDemand/app/views/video_posts/new.html.erb:24: syntax error, unexpected kENSURE, expecting ')'
+/home/christoph/NetBeansProjects/VideoOnDemand/app/views/video_posts/new.html.erb:26: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47video_posts47new46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>New video_post</h1>\n\n"
+
+;  form_for(@video_post) do |f| ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( #f.error_messages ).to_s); @output_buffer.concat "\n\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :title ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.text_field :title ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :description ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.text_area :description ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :file_field ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.file_field :uploaded_data ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.submit 'Create' ).to_s); @output_buffer.concat "\n  </p>\n"
+
+;  end ; @output_buffer.concat "\n\n"
+
+; @output_buffer.concat(( link_to 'Back', video_posts_path ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/christoph/NetBeansProjects/VideoOnDemand/app/views/video_posts/new.html.erb:26:in `compile!'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:61:in `compile'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:28:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/template.rb:205:in `render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:265:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:348:in `_render_with_layout'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:262:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:942:in `render_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135:in `custom'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `respond'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `respond'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/christoph/NetBeansProjects/VideoOnDemand/app/controllers/video_posts_controller.rb:29:in `new'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:391:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:386:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/routing/route_set.rb:438:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:14:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.8/lib/commands/server.rb:111
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/christoph/NetBeansProjects/VideoOnDemand/app/views/video_posts/new.html.erb:21: syntax error, unexpected kEND, expecting ')'
+;  end ; @output_buffer.concat "\n\n"
+      ^
+/home/christoph/NetBeansProjects/VideoOnDemand/app/views/video_posts/new.html.erb:24: syntax error, unexpected kENSURE, expecting ')'
+/home/christoph/NetBeansProjects/VideoOnDemand/app/views/video_posts/new.html.erb:26: syntax error, unexpected kEND, expecting ')') on line #21 of app/views/video_posts/new.html.erb:
+18:   <p>
+19:     <%= f.submit 'Create' %>
+20:   </p>
+21: <% end %>
+22: 
+23: <%= link_to 'Back', video_posts_path %>
+
+    app/views/video_posts/new.html.erb:26:in `compile!'
+    app/controllers/video_posts_controller.rb:29:in `new'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (27.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#new (for 127.0.0.1 at 2010-07-26 16:05:41) [GET]
+  [4;36;1mVideoPost Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `video_posts`[0m
+Rendering template within layouts/video_posts
+Rendering video_posts/new
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://127.0.0.1/video_posts/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#create (for 127.0.0.1 at 2010-07-26 16:05:46) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"mkeChLMY4cjogoKjpygXcQlDvoS2iF5ukwZfRYtdVok=", "video_post"=>{"uploaded_data"=>"463523405_033dc99232_o-652146.jpeg", "title"=>"asdf", "description"=>"asdf"}}
+  [4;35;1mVideoPost Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/video_posts
+Rendering video_posts/new
+Completed in 12ms (View: 3, DB: 1) | 200 OK [http://127.0.0.1/video_posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#index (for 127.0.0.1 at 2010-07-26 16:05:56) [GET]
+  [4;36;1mVideoPost Load (0.1ms)[0m   [0;1mSELECT * FROM `video_posts` [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://127.0.0.1/video_posts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#index (for 127.0.0.1 at 2010-07-26 16:05:57) [GET]
+  [4;35;1mVideoPost Load (0.1ms)[0m   [0mSELECT * FROM `video_posts` [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/index
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://127.0.0.1/video_posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#index (for 127.0.0.1 at 2010-07-26 16:13:09) [GET]
+  [4;36;1mVideoPost Load (0.1ms)[0m   [0;1mSELECT * FROM `video_posts` [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/index
+Completed in 203ms (View: 8, DB: 0) | 200 OK [http://127.0.0.1/video_posts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#new (for 127.0.0.1 at 2010-07-26 16:13:11) [GET]
+  [4;35;1mVideoPost Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+Rendering template within layouts/video_posts
+Rendering video_posts/new
+
+ActionView::TemplateError (undefined local variable or method `videoposts_path' for #<ActionView::Base:0xb6fa4c34>) on line #3 of app/views/video_posts/new.html.erb:
+1: <h1>New video_post</h1>
+2: 
+3: <% form_for(@video_post, :url => videoposts_path,
+4:             :html => { :multipart => true }) do |f| %>
+5:   
+6: 
+
+    app/views/video_posts/new.html.erb:3
+    app/controllers/video_posts_controller.rb:29:in `new'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.5ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#new (for 127.0.0.1 at 2010-07-26 16:13:33) [GET]
+  [4;36;1mVideoPost Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `video_posts`[0m
+Rendering template within layouts/video_posts
+Rendering video_posts/new
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/video_posts/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#create (for 127.0.0.1 at 2010-07-26 16:13:40) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"mkeChLMY4cjogoKjpygXcQlDvoS2iF5ukwZfRYtdVok=", "video_post"=>{"uploaded_data"=>#<File:/tmp/RackMultipart12011-0>, "title"=>"asdf", "description"=>"asdfa"}}
+  [4;35;1mVideoPost Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mVideoPost Create (16.1ms)[0m   [0mINSERT INTO `video_posts` (`size`, `created_at`, `title`, `content_type`, `thumbnail`, `updated_at`, `parent_id`, `filename`, `height`, `description`, `width`) VALUES(238113, '2010-07-26 14:13:40', 'asdf', 'image/jpeg', NULL, '2010-07-26 14:13:40', NULL, 'Exagon_Rainbow_Apple_by_enricoagostoni.jpg', 400, 'asdfa', 640)[0m
+  [4;36;1mSQL (83.7ms)[0m   [0;1mROLLBACK[0m
+
+NameError (wrong constant name thumb):
+  app/controllers/video_posts_controller.rb:46:in `create'
+  app/controllers/video_posts_controller.rb:45:in `create'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#create (for 127.0.0.1 at 2010-07-26 16:14:07) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"mkeChLMY4cjogoKjpygXcQlDvoS2iF5ukwZfRYtdVok=", "video_post"=>{"uploaded_data"=>#<File:/tmp/RackMultipart12011-1>, "title"=>"asdf", "description"=>"asdfa"}}
+  [4;35;1mVideoPost Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mVideoPost Create (0.2ms)[0m   [0mINSERT INTO `video_posts` (`size`, `created_at`, `title`, `content_type`, `thumbnail`, `updated_at`, `parent_id`, `filename`, `height`, `description`, `width`) VALUES(238113, '2010-07-26 14:14:08', 'asdf', 'image/jpeg', NULL, '2010-07-26 14:14:08', NULL, 'Exagon_Rainbow_Apple_by_enricoagostoni.jpg', 400, 'asdfa', 640)[0m
+  [4;36;1mSQL (65.1ms)[0m   [0;1mROLLBACK[0m
+
+NameError (wrong constant name thumbnail):
+  app/controllers/video_posts_controller.rb:46:in `create'
+  app/controllers/video_posts_controller.rb:45:in `create'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (39.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#create (for 127.0.0.1 at 2010-07-26 16:14:17) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"mkeChLMY4cjogoKjpygXcQlDvoS2iF5ukwZfRYtdVok=", "video_post"=>{"uploaded_data"=>#<File:/tmp/RackMultipart12011-2>, "title"=>"asdf", "description"=>"asdfa"}}
+  [4;35;1mVideoPost Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mVideoPost Create (3.6ms)[0m   [0mINSERT INTO `video_posts` (`size`, `created_at`, `title`, `content_type`, `thumbnail`, `updated_at`, `parent_id`, `filename`, `height`, `description`, `width`) VALUES(238113, '2010-07-26 14:14:18', 'asdf', 'image/jpeg', NULL, '2010-07-26 14:14:18', NULL, 'Exagon_Rainbow_Apple_by_enricoagostoni.jpg', 400, 'asdfa', 640)[0m
+  [4;36;1mSQL (51.1ms)[0m   [0;1mROLLBACK[0m
+
+NameError (wrong constant name thumbnail.rb):
+  app/controllers/video_posts_controller.rb:46:in `create'
+  app/controllers/video_posts_controller.rb:45:in `create'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#create (for 127.0.0.1 at 2010-07-26 16:14:33) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"mkeChLMY4cjogoKjpygXcQlDvoS2iF5ukwZfRYtdVok=", "video_post"=>{"uploaded_data"=>#<File:/tmp/RackMultipart12011-3>, "title"=>"asdf", "description"=>"asdfa"}}
+  [4;35;1mVideoPost Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mVideoPost Create (0.2ms)[0m   [0mINSERT INTO `video_posts` (`size`, `created_at`, `title`, `content_type`, `thumbnail`, `updated_at`, `parent_id`, `filename`, `height`, `description`, `width`) VALUES(238113, '2010-07-26 14:14:33', 'asdf', 'image/jpeg', NULL, '2010-07-26 14:14:33', NULL, 'Exagon_Rainbow_Apple_by_enricoagostoni.jpg', 400, 'asdfa', 640)[0m
+  [4;36;1mSQL (59.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mThumbnail Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `thumbnails`[0m
+
+NoMethodError (undefined method `attachment' for #<Class:0xb6fdb838>):
+  app/models/thumbnail.rb:7
+  app/controllers/video_posts_controller.rb:46:in `create'
+  app/controllers/video_posts_controller.rb:45:in `create'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (37.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#create (for 127.0.0.1 at 2010-07-26 16:17:05) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"mkeChLMY4cjogoKjpygXcQlDvoS2iF5ukwZfRYtdVok=", "video_post"=>{"uploaded_data"=>#<File:/tmp/RackMultipart12011-4>, "title"=>"asdf", "description"=>"asdfa"}}
+  [4;35;1mVideoPost Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mVideoPost Create (0.3ms)[0m   [0mINSERT INTO `video_posts` (`size`, `created_at`, `title`, `content_type`, `thumbnail`, `updated_at`, `parent_id`, `filename`, `height`, `description`, `width`) VALUES(238113, '2010-07-26 14:17:06', 'asdf', 'image/jpeg', NULL, '2010-07-26 14:17:06', NULL, 'Exagon_Rainbow_Apple_by_enricoagostoni.jpg', 400, 'asdfa', 640)[0m
+  [4;36;1mThumbnail Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `thumbnails`[0m
+  [4;35;1mThumbnail Load (89.2ms)[0m   [0mSELECT * FROM `thumbnails` WHERE (`thumbnails`.`thumbnail` = 'thumb' AND `thumbnails`.`parent_id` = 5) LIMIT 1[0m
+  [4;36;1mThumbnail Create (0.2ms)[0m   [0;1mINSERT INTO `thumbnails` (`size`, `created_at`, `content_type`, `thumbnail`, `updated_at`, `parent_id`, `filename`, `height`, `width`) VALUES(4129, '2010-07-26 14:17:06', 'image/jpeg', 'thumb', '2010-07-26 14:17:06', 5, 'Exagon_Rainbow_Apple_by_enricoagostoni_thumb.jpg', 63, 100)[0m
+  [4;35;1mSQL (49.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/video_posts/5
+Completed in 899ms (DB: 140) | 302 Found [http://127.0.0.1/video_posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#show (for 127.0.0.1 at 2010-07-26 16:17:06) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mVideoPost Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `video_posts`[0m
+  [4;35;1mVideoPost Load (0.2ms)[0m   [0mSELECT * FROM `video_posts` WHERE (`video_posts`.`id` = 5) [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/show
+
+ActionView::TemplateError (undefined method `file_field' for #<VideoPost:0xb6f7b9d8>) on line #13 of app/views/video_posts/show.html.erb:
+10: 
+11: <p>
+12:   <b>File field:</b>
+13:   <%=h @video_post.file_field %>
+14: </p>
+15: 
+16: 
+
+    app/views/video_posts/show.html.erb:13
+    app/controllers/video_posts_controller.rb:18:in `show'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (82.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#show (for 127.0.0.1 at 2010-07-26 16:20:10) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mVideoPost Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `video_posts`[0m
+  [4;35;1mVideoPost Load (0.1ms)[0m   [0mSELECT * FROM `video_posts` WHERE (`video_posts`.`id` = 5) [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/show
+
+ActionView::TemplateError (undefined local variable or method `video_post' for #<ActionView::Base:0xb70093b4>) on line #13 of app/views/video_posts/show.html.erb:
+10: 
+11: <p>
+12:   <b>Video:</b>
+13:   <%= link_to image_tag(video_post.public_filename(:thumb)), video_post.public_filename %>
+14: </p>
+15: 
+16: 
+
+    app/views/video_posts/show.html.erb:13
+    app/controllers/video_posts_controller.rb:18:in `show'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (36.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#show (for 127.0.0.1 at 2010-07-26 16:20:23) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mVideoPost Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `video_posts`[0m
+  [4;35;1mVideoPost Load (0.1ms)[0m   [0mSELECT * FROM `video_posts` WHERE (`video_posts`.`id` = 5) [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/show
+Completed in 17ms (View: 10, DB: 1) | 200 OK [http://127.0.0.1/video_posts/5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#index (for 127.0.0.1 at 2010-07-26 16:20:44) [GET]
+  [4;36;1mVideoPost Load (0.2ms)[0m   [0;1mSELECT * FROM `video_posts` [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/index
+  [4;35;1mVideoPost Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+
+ActionView::TemplateError (undefined method `file_field' for #<VideoPost:0xb6e1e838>) on line #14 of app/views/video_posts/index.html.erb:
+11:   <tr>
+12:     <td><%=h video_post.title %></td>
+13:     <td><%=h video_post.description %></td>
+14:     <td><%=h video_post.file_field %></td>
+15:     <td><%= link_to 'Show', video_post %></td>
+16:     <td><%= link_to 'Edit', edit_video_post_path(video_post) %></td>
+17:     <td><%= link_to 'Destroy', video_post, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    app/views/video_posts/index.html.erb:14
+    app/views/video_posts/index.html.erb:10:in `each'
+    app/views/video_posts/index.html.erb:10
+    app/controllers/video_posts_controller.rb:7:in `index'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (90.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#index (for 127.0.0.1 at 2010-07-26 16:20:49) [GET]
+  [4;36;1mVideoPost Load (0.1ms)[0m   [0;1mSELECT * FROM `video_posts` [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/index
+  [4;35;1mVideoPost Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+
+ActionView::TemplateError (undefined method `file_field' for #<VideoPost:0xb6fc9cdc>) on line #14 of app/views/video_posts/index.html.erb:
+11:   <tr>
+12:     <td><%=h video_post.title %></td>
+13:     <td><%=h video_post.description %></td>
+14:     <td><%=h video_post.file_field %></td>
+15:     <td><%= link_to 'Show', video_post %></td>
+16:     <td><%= link_to 'Edit', edit_video_post_path(video_post) %></td>
+17:     <td><%= link_to 'Destroy', video_post, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    app/views/video_posts/index.html.erb:14
+    app/views/video_posts/index.html.erb:10:in `each'
+    app/views/video_posts/index.html.erb:10
+    app/controllers/video_posts_controller.rb:7:in `index'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (27.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#index (for 127.0.0.1 at 2010-07-26 16:20:50) [GET]
+  [4;36;1mVideoPost Load (0.1ms)[0m   [0;1mSELECT * FROM `video_posts` [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/index
+  [4;35;1mVideoPost Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+
+ActionView::TemplateError (undefined method `file_field' for #<VideoPost:0xb6e76c90>) on line #14 of app/views/video_posts/index.html.erb:
+11:   <tr>
+12:     <td><%=h video_post.title %></td>
+13:     <td><%=h video_post.description %></td>
+14:     <td><%=h video_post.file_field %></td>
+15:     <td><%= link_to 'Show', video_post %></td>
+16:     <td><%= link_to 'Edit', edit_video_post_path(video_post) %></td>
+17:     <td><%= link_to 'Destroy', video_post, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    app/views/video_posts/index.html.erb:14
+    app/views/video_posts/index.html.erb:10:in `each'
+    app/views/video_posts/index.html.erb:10
+    app/controllers/video_posts_controller.rb:7:in `index'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#index (for 127.0.0.1 at 2010-07-26 16:21:07) [GET]
+  [4;36;1mVideoPost Load (0.1ms)[0m   [0;1mSELECT * FROM `video_posts` [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/index
+  [4;35;1mVideoPost Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+
+ActionView::TemplateError (undefined method `public_filename' for nil:NilClass) on line #14 of app/views/video_posts/index.html.erb:
+11:   <tr>
+12:     <td><%=h video_post.title %></td>
+13:     <td><%=h video_post.description %></td>
+14:     <td><%= link_to image_tag(@video_post.public_filename(:thumb)), @video_post.public_filename %></td>
+15:     <td><%= link_to 'Show', video_post %></td>
+16:     <td><%= link_to 'Edit', edit_video_post_path(video_post) %></td>
+17:     <td><%= link_to 'Destroy', video_post, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    app/views/video_posts/index.html.erb:14
+    app/views/video_posts/index.html.erb:10:in `each'
+    app/views/video_posts/index.html.erb:10
+    app/controllers/video_posts_controller.rb:7:in `index'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (27.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#index (for 127.0.0.1 at 2010-07-26 16:21:08) [GET]
+  [4;36;1mVideoPost Load (0.1ms)[0m   [0;1mSELECT * FROM `video_posts` [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/index
+  [4;35;1mVideoPost Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+
+ActionView::TemplateError (undefined method `public_filename' for nil:NilClass) on line #14 of app/views/video_posts/index.html.erb:
+11:   <tr>
+12:     <td><%=h video_post.title %></td>
+13:     <td><%=h video_post.description %></td>
+14:     <td><%= link_to image_tag(@video_post.public_filename(:thumb)), @video_post.public_filename %></td>
+15:     <td><%= link_to 'Show', video_post %></td>
+16:     <td><%= link_to 'Edit', edit_video_post_path(video_post) %></td>
+17:     <td><%= link_to 'Destroy', video_post, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    app/views/video_posts/index.html.erb:14
+    app/views/video_posts/index.html.erb:10:in `each'
+    app/views/video_posts/index.html.erb:10
+    app/controllers/video_posts_controller.rb:7:in `index'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (28.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#index (for 127.0.0.1 at 2010-07-26 16:21:55) [GET]
+  [4;36;1mVideoPost Load (0.1ms)[0m   [0;1mSELECT * FROM `video_posts` [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/index
+  [4;35;1mVideoPost Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+Completed in 17ms (View: 12, DB: 1) | 200 OK [http://127.0.0.1/video_posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#show (for 127.0.0.1 at 2010-07-26 16:21:58) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mVideoPost Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `video_posts`[0m
+  [4;35;1mVideoPost Load (0.1ms)[0m   [0mSELECT * FROM `video_posts` WHERE (`video_posts`.`id` = 5) [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/show
+Completed in 60ms (View: 6, DB: 1) | 200 OK [http://127.0.0.1/video_posts/5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#index (for 127.0.0.1 at 2010-07-26 16:21:59) [GET]
+  [4;36;1mVideoPost Load (0.1ms)[0m   [0;1mSELECT * FROM `video_posts` [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/index
+  [4;35;1mVideoPost Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/video_posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#destroy (for 127.0.0.1 at 2010-07-26 16:22:14) [DELETE]
+  Parameters: {"authenticity_token"=>"mkeChLMY4cjogoKjpygXcQlDvoS2iF5ukwZfRYtdVok=", "id"=>"5"}
+  [4;36;1mVideoPost Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `video_posts`[0m
+  [4;35;1mVideoPost Load (0.1ms)[0m   [0mSELECT * FROM `video_posts` WHERE (`video_posts`.`id` = 5) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mThumbnail Load (0.3ms)[0m   [0mSELECT * FROM `thumbnails` WHERE (`thumbnails`.parent_id = 5) [0m
+  [4;36;1mThumbnail Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `thumbnails`[0m
+  [4;35;1mThumbnail Destroy (48.0ms)[0m   [0mDELETE FROM `thumbnails` WHERE `id` = 1[0m
+  [4;36;1mVideoPost Destroy (0.2ms)[0m   [0;1mDELETE FROM `video_posts` WHERE `id` = 5[0m
+  [4;35;1mSQL (56.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/video_posts
+Completed in 123ms (DB: 108) | 302 Found [http://127.0.0.1/video_posts/5]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#index (for 127.0.0.1 at 2010-07-26 16:22:14) [GET]
+  [4;36;1mVideoPost Load (0.2ms)[0m   [0;1mSELECT * FROM `video_posts` [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://127.0.0.1/video_posts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#index (for 127.0.0.1 at 2010-07-26 16:22:45) [GET]
+  [4;35;1mVideoPost Load (0.1ms)[0m   [0mSELECT * FROM `video_posts` [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://127.0.0.1/video_posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#new (for 127.0.0.1 at 2010-07-26 16:22:46) [GET]
+  [4;36;1mVideoPost Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `video_posts`[0m
+Rendering template within layouts/video_posts
+Rendering video_posts/new
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://127.0.0.1/video_posts/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#create (for 127.0.0.1 at 2010-07-26 16:22:57) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"mkeChLMY4cjogoKjpygXcQlDvoS2iF5ukwZfRYtdVok=", "video_post"=>{"uploaded_data"=>#<File:/tmp/RackMultipart12011-5>, "title"=>"asdf", "description"=>"asdf"}}
+  [4;35;1mVideoPost Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mVideoPost Create (0.2ms)[0m   [0mINSERT INTO `video_posts` (`size`, `created_at`, `title`, `content_type`, `thumbnail`, `updated_at`, `parent_id`, `filename`, `height`, `description`, `width`) VALUES(144365, '2010-07-26 14:22:57', 'asdf', 'image/jpeg', NULL, '2010-07-26 14:22:57', NULL, 'DSC_7254.JPG', 402, 'asdf', 600)[0m
+  [4;36;1mThumbnail Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `thumbnails`[0m
+  [4;35;1mThumbnail Load (0.2ms)[0m   [0mSELECT * FROM `thumbnails` WHERE (`thumbnails`.`thumbnail` = 'thumb' AND `thumbnails`.`parent_id` = 6) LIMIT 1[0m
+  [4;36;1mThumbnail Create (0.2ms)[0m   [0;1mINSERT INTO `thumbnails` (`size`, `created_at`, `content_type`, `thumbnail`, `updated_at`, `parent_id`, `filename`, `height`, `width`) VALUES(6521, '2010-07-26 14:22:57', 'image/jpeg', 'thumb', '2010-07-26 14:22:57', 6, 'DSC_7254_thumb.JPG', 67, 100)[0m
+  [4;35;1mSQL (69.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/video_posts/6
+Completed in 165ms (DB: 72) | 302 Found [http://127.0.0.1/video_posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#show (for 127.0.0.1 at 2010-07-26 16:22:57) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mVideoPost Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `video_posts`[0m
+  [4;35;1mVideoPost Load (0.3ms)[0m   [0mSELECT * FROM `video_posts` WHERE (`video_posts`.`id` = 6) [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/show
+Completed in 64ms (View: 10, DB: 1) | 200 OK [http://127.0.0.1/video_posts/6]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#index (for 127.0.0.1 at 2010-07-26 16:23:00) [GET]
+  [4;36;1mVideoPost Load (0.2ms)[0m   [0;1mSELECT * FROM `video_posts` [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/index
+  [4;35;1mVideoPost Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/video_posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#show (for 127.0.0.1 at 2010-07-26 16:23:06) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mVideoPost Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `video_posts`[0m
+  [4;35;1mVideoPost Load (0.0ms)[0m   [0mSELECT * FROM `video_posts` WHERE (`video_posts`.`id` = 6) [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/show
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://127.0.0.1/video_posts/6]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#index (for 127.0.0.1 at 2010-07-26 16:23:29) [GET]
+  [4;36;1mVideoPost Load (0.1ms)[0m   [0;1mSELECT * FROM `video_posts` [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/index
+  [4;35;1mVideoPost Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://127.0.0.1/video_posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#index (for 127.0.0.1 at 2010-07-26 16:32:22) [GET]
+  [4;36;1mVideoPost Load (0.1ms)[0m   [0;1mSELECT * FROM `video_posts` [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/index
+  [4;35;1mVideoPost Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/video_posts]
+  [4;36;1mSQL (15.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#show (for 127.0.0.1 at 2010-07-26 17:29:03) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mVideoPost Columns (24.6ms)[0m   [0;1mSHOW FIELDS FROM `video_posts`[0m
+  [4;35;1mVideoPost Load (0.1ms)[0m   [0mSELECT * FROM `video_posts` WHERE (`video_posts`.`id` = 6) [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/show
+Completed in 96ms (View: 24, DB: 40) | 200 OK [http://127.0.0.1/video_posts/6]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#index (for 127.0.0.1 at 2010-07-26 17:29:13) [GET]
+  [4;36;1mVideoPost Load (0.1ms)[0m   [0;1mSELECT * FROM `video_posts` [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/index
+  [4;35;1mVideoPost Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `video_posts`[0m
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://127.0.0.1/video_posts]
+  [4;36;1mSQL (14.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (8.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideoPostsController#show (for 127.0.0.1 at 2010-07-26 18:50:12) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mVideoPost Columns (64.6ms)[0m   [0;1mSHOW FIELDS FROM `video_posts`[0m
+  [4;35;1mVideoPost Load (3.3ms)[0m   [0mSELECT * FROM `video_posts` WHERE (`video_posts`.`id` = 6) [0m
+Rendering template within layouts/video_posts
+Rendering video_posts/show
+Completed in 174ms (View: 26, DB: 91) | 200 OK [http://127.0.0.1/video_posts/6]
