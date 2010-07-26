@@ -1,0 +1,17 @@
+<p>
+  <b>
+    <%=h @video_post.title %>
+  </b>
+</p>
+<p>
+  <%= link_to image_tag(@video_post.public_filename(:thumb)), @video_post.public_filename %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @video_post.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_video_post_path(@video_post) %> |
+<%= link_to 'Back', video_posts_path %>
